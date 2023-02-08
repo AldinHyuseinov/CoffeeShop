@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Display</title>
+</head>
+<body>
+<div th:fragment="orderFragment(imageSrc, orderObj)">
+    <img class="mr-2" th:src="@{${imageSrc}}" alt=itemImg
+         width="50px" height="50px">
+    <span class="p-3" th:text="${orderObj.name}"></span>
+    <span class="p-3" th:text="${orderObj.price}"></span>
+    <a class="ml-3 p-3 text-warning" th:href="@{/orders/ready(orderId=${orderObj.id})}">Ready</a>
+</div>
+</body>
+</html>
